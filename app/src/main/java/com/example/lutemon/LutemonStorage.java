@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LutemonStorage {
     private static LutemonStorage instance;
-    private List<Lutemon> lutemons;
+    private final List<Lutemon> lutemons;
 
     private LutemonStorage() {
         this.lutemons = new ArrayList<>();
@@ -36,15 +36,13 @@ public class LutemonStorage {
         return result;
     }
 
-
     public void moveLutemon(int id, String newLocation) {
         for (Lutemon lutemon : lutemons) {
             if (lutemon.getId() == id) {
                 lutemon.setLocation(newLocation);
-                return; // Exit the loop after updating
+                return;
             }
         }
-        // Handle the case where the Lutemon with the given id is not found (optional)
     }
 
     public Lutemon getLutemonById(int id) {
@@ -69,7 +67,19 @@ public class LutemonStorage {
         }
     }
 
-    public void clearStorage(){
+    public void clearStorage() {
         lutemons.clear();
+    }
+
+    public List<Lutemon> getStorageLutemons() {
+        return getLutemonsByLocation("Home");
+    }
+
+    public List<Lutemon> getTrainingLutemons() {
+        return getLutemonsByLocation("Training");
+    }
+
+    public List<Lutemon> getBattleLutemons() {
+        return getLutemonsByLocation("Battle");
     }
 }

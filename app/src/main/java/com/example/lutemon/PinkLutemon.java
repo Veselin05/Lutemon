@@ -2,7 +2,8 @@ package com.example.lutemon;
 
 public class PinkLutemon extends Lutemon {
     public PinkLutemon(String name, String location) {
-        super(name, "Pink", location);
+
+        super(name,3,1,10, "Pink", location);
     }
     //Pink Lutemon has more attack power
     @Override

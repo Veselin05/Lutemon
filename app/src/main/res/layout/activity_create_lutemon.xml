@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".CreateLutemonActivity">
+    <include layout="@layout/toolbar"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,6 +80,6 @@
         android:text="Create"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:onClick="onCreateClicked"/>
+        android:onClick="onCreateClicked" />
 
 </LinearLayout>
